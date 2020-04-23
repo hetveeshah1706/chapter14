@@ -1,0 +1,43 @@
+<div class="container">
+  <div>
+    <label>ID:</label>
+    <input class="form-control" name="pid" [(ngModel)]="pid">
+  </div>
+  <div>
+    <label>IMAGE:</label><br>
+    <img name="pimg" [src]="pimg">
+  </div>
+  <div>
+    <label>NAME:</label>
+    <input class="form-control" name="pname" [(ngModel)]="pname">
+  </div>
+  <div>
+    <label>PRICE:</label>
+    <input class="form-control" name="pprice" [(ngModel)]="pprice">
+  </div>
+  <label>SUGGETIONS:</label>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <!-- <h1>Products</h1> -->
+      <div class="row">
+        <div *ngFor="let item of allProduct" class="col-sm-6 col-md-3"  (click)="onEdit(item)">
+          <div class="thumbnail">
+            <img height="250" src="{{item.pimg}}" alt="...">
+            <div class="caption">
+              <h3>{{item.pname}}</h3>
+              <p>{{item.pprice | currency:'INR':true }}</p>
+              <p>{{item.soh}}</p>
+              <!-- <a class="btn btn-primary" role="button" (click)="onEdit(item)">EDIT</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
